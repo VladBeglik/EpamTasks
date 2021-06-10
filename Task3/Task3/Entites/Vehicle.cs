@@ -6,9 +6,9 @@ namespace Task4.Entites
 {
 	public abstract class Vehicle
 	{
-		public Chassis Chassis { get; set; }
-		public Engine Engine { get; set; }
-		public Transmission Transmission { get; set; }
+		public Chassis Chassis { get; private set; }
+		public Engine Engine { get; private set; }
+		public Transmission Transmission { get; private set; }
 
 		public Vehicle(Chassis chassis, Transmission transmission, Engine engine)
 		{
@@ -16,6 +16,5 @@ namespace Task4.Entites
 			Transmission = transmission;
 			Engine = engine;
 		}
-
 	}
 }
