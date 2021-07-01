@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
-namespace Task4.Entites
+namespace Task3.Entites
 {
 	public abstract class Vehicle
 	{
-		public Chassis Chassis { get; private set; }
-		public Engine Engine { get; private set; }
-		public Transmission Transmission { get; private set; }
+		public Chassis Chassis { get;  set; }
+		public Engine Engine { get;  set; }
+		public Transmission Transmission { get;  set; }
 
 		public Vehicle(Chassis chassis, Transmission transmission, Engine engine)
 		{

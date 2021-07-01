@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Task4
+namespace Task3
 {
 	public class Transmission
 	{
-		public string Type { get;private set; }
-
-		public int CountOfGears { get; private set; }
-
-		public string Мanufacturer { get; private set; }
+		public string Type { get; set; }
+		public int CountOfGears { get; set; }
+		public string Мanufacturer { get; set; }
 
 		public Transmission(string type, int countOfGears, string мanufacturer)
 		{
+			if (type == string.Empty || countOfGears < 0 || мanufacturer == string.Empty)
+			{
+				throw new Exception("Null or wrong data");
+			}
 			Type = type;
 			CountOfGears = countOfGears;
 			Мanufacturer = мanufacturer;
+		}
+
+		public Transmission()
+		{
+				
 		}
 
 		public override string ToString()

@@ -1,20 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
-namespace Task4.Entites
+namespace Task3.Entites
 {
 	public class Bus : Vehicle
 	{
-		public string CountOfSeat { get; private set; }
-		public Bus(string countOfSeat,Chassis chassis, Transmission transmission, Engine engine):base(chassis, transmission, engine)
+		public int CountOfSeat { get; set; }
+		public Bus(int countOfSeat,Chassis chassis, Transmission transmission, Engine engine):base(chassis, transmission, engine)
 		{
+			if(chassis is null)
+			{
+				throw new Exception("Not all input data or incorrect data");
+			}
+			if (transmission is null)
+			{
+				throw new Exception("Not all input data or incorrect data");
+			}
+			if (engine is null)
+			{
+				throw new Exception("Not all input data or incorrect data");
+			}
+			if (countOfSeat <= 0)
+			{
+				throw new Exception("Not all input data or incorrect data");
+			}
 			CountOfSeat = countOfSeat;
 		}
 
 		public override string ToString()
 		{
-			return $"BUS\nCountOfSeat {CountOfSeat},\nChassis {Chassis},\nTransmission {Transmission},\nEngine{Engine}";
+			return $"BUS CountOfSeat {CountOfSeat}, Chassis {Chassis}, Transmission {Transmission}, Engine{Engine}";
 		}
 	}
 }
