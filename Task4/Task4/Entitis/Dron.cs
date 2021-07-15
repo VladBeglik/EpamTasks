@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Task4.Interfaces;
+using Task4.Structures;
 
 namespace Task4.Entitis
 {
@@ -12,26 +11,27 @@ namespace Task4.Entitis
 			Speed = speed;
 		}
 
-		public double FlyTime(Coordinate coordinate)
+		public double GetFlyTime(Coordinate coordinate)
 		{
-			double L = CurrentPosition.Distanse(coordinate);
-			if (L >= 1000)
+			var l = CurrentPosition.Distance(coordinate);
+			if (l >= 1000)
 			{
 				Console.WriteLine("The drone cannot fly more than 1000 km");
 				return 0;
 			}
-			double time = L / Speed;
-			time = time + ((time - time % 10) / 10);
+			var time = l / Speed;
+			time += ((time - time % 10) / 10);
 			CurrentPosition = coordinate;
 			return time;
 		}
 
 		public void FlyTo(Coordinate coordinate)
 		{
-			double L = CurrentPosition.Distanse(coordinate);
-			if (L >= 1000)
+			var l = CurrentPosition.Distance(coordinate);
+			if (l >= 1000)
 			{
 				Console.WriteLine("The drone cannot fly more than 1000 km");
+				throw new Exception("The drone cannot fly more than 1000 km");
 			}
 			else
 			{

@@ -2,23 +2,39 @@
 
 namespace Task2
 {
-	class Program
+	public class Program
 	{
 		static void Main(string[] args)
 		{
 			int a = Convert.ToInt32(Console.ReadLine());
 			int b = Convert.ToInt32(Console.ReadLine());
-			string result = string.Empty;
-			while(a != 0)
+
+			var result = ConvertToNumeralSystem(a, b);
+			Console.WriteLine(result);
+		}
+
+
+		/// <summary>
+		/// Convert number to some numeral system.
+		/// </summary>
+		/// <param name="number"></param>
+		/// <param name="numeralSystem"></param>
+		/// <returns></returns>
+		public static string ConvertToNumeralSystem(int number, int numeralSystem)
+		{
+			if (number < 0)
 			{
-				result += a % b;
-				a /= b;
+				throw new Exception(" ");
+			}
+			string result = string.Empty;
+			while (number != 0)
+			{
+				result += number % numeralSystem;
+				number /= numeralSystem;
 			}
 			char[] arr = result.ToCharArray();
 			Array.Reverse(arr);
-			Console.WriteLine(new string(arr));
-
-
+			return new string(arr);
 		}
 	}
 }

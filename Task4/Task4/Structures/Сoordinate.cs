@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task4
+namespace Task4.Structures
 {
 	public struct Coordinate
 	{
@@ -11,13 +11,18 @@ namespace Task4
 		public Coordinate(double x, double y, double z)
 		{
 			X = x;
-			Y = y;
+			Y = y;	
 			Z = z;
 		}
 
-		public double Distanse(Coordinate coordinate)
+		public double Distance(Coordinate coordinate)
 		{
-			return Math.Sqrt(Math.Pow((X - coordinate.X), 2) + Math.Pow((Y - coordinate.Y),2)  + Math.Pow((Z - coordinate.Z), 2));
+			return Math.Sqrt(Math.Pow((coordinate.X - X), 2) + Math.Pow((coordinate.Y - Y),2)  + Math.Pow((coordinate.Z - Z), 2));
+		}
+
+		public override string ToString()
+		{
+			return $"{X}, {Y}, {Z}";
 		}
 	}
 }

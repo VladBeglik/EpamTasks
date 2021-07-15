@@ -17,28 +17,28 @@ namespace Task3Tests
 		public void PositiveTestOfCar()
 		{
 			var car = new Car("Tesla", chassis, transsmit, eng);
-			Assert.AreEqual(service.WriteToConsole(car), "CAR Model Tesla, Chassis CountOfWheels: 0,Size: 0,LiftingCapacity: 0, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
+			Assert.AreEqual(service.WriteToConsole(car), "CAR Model Tesla, Chassis CountOfWheels: 1,Size: 2,LiftingCapacity: 3, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
 		}
 
 		[TestMethod]
 		public void PositiveTestOfBus()
 		{
 			var bus = new Bus(111, chassis, transsmit, eng);
-			Assert.AreEqual(service.WriteToConsole(bus), "BUS CountOfSeat 111, Chassis CountOfWheels: 0,Size: 0,LiftingCapacity: 0, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
+			Assert.AreEqual(service.WriteToConsole(bus), "BUS CountOfSeat 111, Chassis CountOfWheels: 1,Size: 2,LiftingCapacity: 3, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
 		}
 
 		[TestMethod]
 		public void PositiveTestOfScooter()
 		{
 			var scooter = new Scooter(100, chassis, transsmit, eng);
-			Assert.AreEqual(service.WriteToConsole(scooter), "Scooter Speed 100, Chassis CountOfWheels: 0,Size: 0,LiftingCapacity: 0, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
+			Assert.AreEqual(service.WriteToConsole(scooter), "Scooter Speed 100, Chassis CountOfWheels: 1,Size: 2,LiftingCapacity: 3, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
 		}
 		[TestMethod]
 		public void PositiveTestOfTruck()
 		{
 
 			var truck = new Truck(2000, chassis, transsmit, eng);
-			Assert.AreEqual(service.WriteToConsole(truck), "Truck Massa 2000, Chassis CountOfWheels: 0,Size: 0,LiftingCapacity: 0, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
+			Assert.AreEqual(service.WriteToConsole(truck), "Truck Massa 2000, Chassis CountOfWheels: 1,Size: 2,LiftingCapacity: 3, Transmission Type: 1,CountOfGears: 1,Мanufacturer: apple, EnginePower: 1,Volume: 2,SerialNumber: qwe,Type: qeqw");
 		}
 
 		[TestMethod]

@@ -8,7 +8,7 @@ namespace Task3
 	{
 		public int Power { get;  set; }
 		public double Volume { get;  set; }
-		public string serialNumber { get;  set; }
+		public string SerialNumber { get;  set; }
 		public string Type { get;  set; }
 
 		public Engine(int power, double volume, string serialNumber, string type)
@@ -19,14 +19,14 @@ namespace Task3
 			}
 			Power = power;
 			Volume = volume;
-			this.serialNumber = serialNumber;
+			SerialNumber = serialNumber;
 			Type = type;
 		}
 
 
 		public override string ToString()
 		{
-			return $"Power: {Power},Volume: {Volume},SerialNumber: {serialNumber},Type: {Type}";
+			return $"Power: {Power},Volume: {Volume},SerialNumber: {SerialNumber},Type: {Type}";
 		}
 	}
 }

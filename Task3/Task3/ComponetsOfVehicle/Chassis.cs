@@ -16,9 +16,9 @@ namespace Task3
 			{
 				throw new Exception("Null or wrong data");
 			}
-			this.CountOfWheels = CountOfWheels;
-			this.Size = Size;
-			this.LiftingCapacity = LiftingCapacity;
+			CountOfWheels = countOfWheels;
+			Size = size;
+			LiftingCapacity = liftingCapacity;
 		}
 
 		public Chassis()

@@ -23,23 +23,13 @@ namespace Task5
 			Console.WriteLine(model.ToString());
 			return model.ToString();
 		}
-		
+
 		/// <summary>
-		/// Save data to xml file.
+		/// Provides complete information about all vehicles with an engine capacity of more than engineVolume.
 		/// </summary>
-		/// <param name="filename"></param>
 		/// <param name="vehicles"></param>
-		public void Save(string filename, List<Vehicle> vehicles)
-		{
-			XmlSerializer formatter = new XmlSerializer(typeof(List<Vehicle>), new Type[] { typeof(Car), typeof(Bus), typeof(Truck), typeof(Scooter) });
-
-			using (FileStream fs = new FileStream($"{filename}.xml", FileMode.OpenOrCreate))
-			{
-				formatter.Serialize(fs, vehicles);
-			}
-		}
-
-		public List<Vehicle> allVehicles(List<Vehicle> vehicles)
+		/// <returns></returns>
+		public List<Vehicle> GetAllVehiclesWithEngineVolumeMoreThan(List<Vehicle> vehicles)
 		{
 			var result = (from transport in vehicles
 				where transport.Engine.Volume > 1.5
@@ -47,13 +37,28 @@ namespace Task5
 			return result;
 		}
 
-		public List<A> allV(List<Vehicle> vehicles)
+		/// <summary>
+		/// Provides engine type, serial number and power rating for all buses and trucks.
+		/// </summary>
+		/// <param name="vehicles"></param>
+		/// <returns></returns>
+		public List<VehicleModel> GetBusAndTrucks(List<Vehicle> vehicles)
 		{
 			var result = (from transport in vehicles
-				where transport.GetType() == typeof(Bus)
-				select new A(transport.Engine.Type, transport.Engine.SerialNumber, transport.Engine.Power)).ToList();
+				where (transport.GetType() == typeof(Bus) && transport.GetType() == typeof(Truck))
+				select new VehicleModel(transport.Engine.Type, transport.Engine.SerialNumber, transport.Engine.Power)).ToList();
 			return result;
 		}
+
+		/// <summary>
+		/// Provides complete information about all vehicles, grouped by transmission type.
+		/// </summary>
+		/// <returns>List of vehicle.</returns>
+		public List<Vehicle> GetGroupedByTransmission(List<Vehicle> vehicles)
+		{
+			return vehicles.GroupBy(v => v.Transmission.Type).SelectMany(g => g).ToList();
+		}
+
 
 	}
 }

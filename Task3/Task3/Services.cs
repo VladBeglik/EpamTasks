@@ -22,6 +22,5 @@ namespace Task3
 			Console.WriteLine(model.ToString());
 			return model.ToString();
 		}
-
 	}
 }

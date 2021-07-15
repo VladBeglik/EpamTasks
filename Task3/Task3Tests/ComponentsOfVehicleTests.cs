@@ -10,8 +10,8 @@ namespace Task3Tests
 		public void PositiveTestOfChassis()
 		{
 			var service = new Services();
-			var chassis = new Chassis(1, 2, 3);
-			Assert.AreEqual(service.WriteToConsole(chassis), "CountOfWheels: 0,Size: 0,LiftingCapacity: 0");
+			var chassis = new Chassis(1, 1, 1);
+			Assert.AreEqual(service.WriteToConsole(chassis), "CountOfWheels: 1,Size: 1,LiftingCapacity: 1");
 		}
 
 		[TestMethod]
